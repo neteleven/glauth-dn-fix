@@ -114,6 +114,7 @@ if [[ "$1" != "--force" ]]; then
         echo "You can avoid this check by running with '--force'"
         exit 1
     fi
+    AUTO="Y"
 else
     TAG="$2"
 fi
@@ -124,6 +125,11 @@ if [[ "$TAG" == "" ]]; then
 fi
 
 prepare_images
+
+if [[ "$AUTO" == "Y" ]]; then
+    echo AUTO
+    exit
+fi
 
 while true; do
     read -p "Everything seems ok. Push to Docker registry? (y/n) " yn

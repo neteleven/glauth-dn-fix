@@ -1,5 +1,3 @@
-VERSION=$(shell bin/linuxamd64/glauth --version)
-
 GIT_COMMIT=$(shell git rev-list -1 HEAD )
 BUILD_TIME=$(shell date -u +%Y%m%d_%H%M%SZ)
 GIT_CLEAN=$(shell git status | grep -E "working (tree|directory) clean" | wc -l | sed 's/^[ ]*//')
